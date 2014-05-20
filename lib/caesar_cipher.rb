@@ -1,10 +1,10 @@
 def encode_text(text, shift_value)
-  letters = ('a'..'z').to_a.concat(('A'..'Z').to_a)
+  alphabet = ('a'..'z').to_a.concat(('A'..'Z').to_a)
   encoded_text = ""
 
   text.each_char do |char|
-    if letters.include?(char)
-      encoded_text += letters[letters.index(char) + shift_value]
+    if alphabet.include?(char)
+      encoded_text += alphabet[alphabet.index(char) + shift_value]
     else
       encoded_text += char  
     end
@@ -13,12 +13,12 @@ def encode_text(text, shift_value)
 end
 
 def decode_text(text, shift_value)
-    letters = ('a'..'z').to_a.concat(('A'..'Z').to_a)
+    alphabet = ('a'..'z').to_a.concat(('A'..'Z').to_a)
     decoded_text = ""
     
     text.each_char do |char|
-    if letters.include?(char)
-      decoded_text += letters[letters.index(char) - shift_value]
+    if alphabet.include?(char)
+      decoded_text += alphabet[alphabet.index(char) - shift_value]
     else
       decoded_text += char  
     end
