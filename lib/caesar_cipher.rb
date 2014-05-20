@@ -1,15 +1,16 @@
-def caesar_cipher(word, shift)
+def encode_text(text, shift_value)
   letters = ('a'..'z').to_a.concat(('A'..'Z').to_a)
-  decoded = ""
+  encoded_text = ""
 
-  word.each_char do |char|
+  text.each_char do |char|
     if letters.include?(char)
-      decoded += letters[letters.index(char) - shift]
+      encoded_text += letters[letters.index(char) + shift_value]
     else
-      decoded += char  
+      encoded_text += char  
     end
   end
-  decoded
+  encoded_text
 end
 
-p caesar_cipher("Ciao Mondo!", 5)
+
+p encode_text("Ciao Mondo!", 5)
